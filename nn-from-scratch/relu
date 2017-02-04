@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 17 15:12:34 2017
+
+@author: anvesha
+"""
+import numpy as np
+
+x=np.array([1,2,3])
+
+def nonlin(x,deriv=True):
+    if(deriv==False):
+        return np.log(1 + np.exp(x))
+    return 1/(1+np.exp(-x))
+    
+
+y=nonlin(x,False)    
+print(y)
+print('\n')
+z=nonlin(x,True)
+print(z)
+print('\n')
+
+relu_approx = np.log(1 + np.exp(x))
+print(relu_approx)
+
